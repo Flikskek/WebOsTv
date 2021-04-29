@@ -1,6 +1,9 @@
 from tkinter import * 
 
-from store import tvkey
+from store import tvkey,ip
+
+import time
+
 from pywebostv.discovery import *    # Because I'm lazy, don't do this.
 from pywebostv.connection import *
 from pywebostv.controls import *
@@ -18,6 +21,12 @@ def chdown():
     tv_control.channel_down()
 
 def poff():
+    system.notify('Power off 3...')
+    time.sleep(1)
+    system.notify('Power off 2...')
+    time.sleep(1)
+    system.notify('Power off 1...')
+    time.sleep(1)
     system.power_off()
 
 def notify():
@@ -45,7 +54,7 @@ notify.pack()
 store = tvkey #TV key
 
 
-client = WebOSClient("192.168.0.104")
+client = WebOSClient(ip)
 client.connect()
 
 media = MediaControl(client)
