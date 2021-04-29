@@ -1,5 +1,6 @@
 from tkinter import * 
 
+from store import tvkey
 from pywebostv.discovery import *    # Because I'm lazy, don't do this.
 from pywebostv.connection import *
 from pywebostv.controls import *
@@ -41,7 +42,7 @@ vup.pack()
 poff.pack()
 notify.pack()
 
-store = {'client_key': '28e9be6ce7def461b62d31331e6d901d'}
+store = tvkey #TV key
 
 
 client = WebOSClient("192.168.0.104")
