@@ -1,10 +1,11 @@
 from tkinter import * 
+from PIL import ImageTk
 
 from store import tvkey,ip
 
 import time
 
-from pywebostv.discovery import *    # Because I'm lazy, don't do this.
+from pywebostv.discovery import *    
 from pywebostv.connection import *
 from pywebostv.controls import *
 
@@ -20,13 +21,13 @@ def chup():
 def chdown():
     tv_control.channel_down()
 
+
 def poff():
-    system.notify('Power off 3...')
-    time.sleep(1)
-    system.notify('Power off 2...')
-    time.sleep(1)
-    system.notify('Power off 1...')
-    time.sleep(1)
+    count=4
+    while count!=1:
+        count=count-1
+        system.notify('Power off ' + str(count) + '...')
+        time.sleep(1)
     system.power_off()
 
 def notify():
@@ -36,12 +37,12 @@ def notify():
 root = Tk()
 root.title("LGTV")
  
-vup = Button(text="Volume up", command=volup)
-vdown = Button(text="Volume down", command=voldown)
-chup = Button(text="Channel up", command=chup)
-chdown = Button(text="Channel down", command=chdown)
-poff = Button(text="Power Off", command=poff)
-notify = Button(text="Test Notify", command=notify)
+vup = Button(text="Volume up", command=volup,background="#555", foreground="#ccc", relief='flat')
+vdown = Button(text="Volume down", command=voldown,background="#555", foreground="#ccc", relief='flat')
+chup = Button(text="Channel up", command=chup,background="#555", foreground="#ccc", relief='flat',)
+chdown = Button(text="Channel down", command=chdown,background="#555", foreground="#ccc", relief='flat')
+poff = Button(text="Power Off", command=poff,background="#555", foreground="#ccc", relief='flat')
+notify = Button(text="Test Notify", command=notify,background="#555", foreground="#ccc", relief='flat')
                            
 
 chdown.pack()
