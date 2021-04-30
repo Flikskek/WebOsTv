@@ -36,21 +36,22 @@ def notify():
 
 root = Tk()
 root.title("LGTV")
- 
-vup = Button(text="Volume up", command=volup,background="#555", foreground="#ccc", relief='flat')
-vdown = Button(text="Volume down", command=voldown,background="#555", foreground="#ccc", relief='flat')
-chup = Button(text="Channel up", command=chup,background="#555", foreground="#ccc", relief='flat',)
-chdown = Button(text="Channel down", command=chdown,background="#555", foreground="#ccc", relief='flat')
-poff = Button(text="Power Off", command=poff,background="#555", foreground="#ccc", relief='flat')
-notify = Button(text="Test Notify", command=notify,background="#555", foreground="#ccc", relief='flat')
+root.geometry("485x600")
+
+vup = Button(text="Volume up", command=volup, background="#555", foreground="#ccc")
+vdown = Button(text="Volume down", command=voldown, background="#555", foreground="#ccc")
+chup = Button(text="Channel up", command=chup, background="#555", foreground="#ccc")
+chdown = Button(text="Channel down", command=chdown, background="#555", foreground="#ccc")
+poff = Button(text="Power Off", command=poff, background="#555", foreground="#ccc")
+notify = Button(text="Test Notify", command=notify ,background="#555", foreground="#ccc")
                            
 
-chdown.pack()
-chup.pack()
-vdown.pack()
-vup.pack()
-poff.pack()
-notify.pack()
+chdown.place(x=400,y=250)
+chup.place(x=400,y=225)
+vdown.place(x=0,y=250)
+vup.place(x=0,y=225)
+poff.place(x=225,y=0)
+notify.place(x=225,y=550)
 
 store = tvkey #TV key
 
